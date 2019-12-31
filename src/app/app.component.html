@@ -1,6 +1,6 @@
 <ion-app>
   <ion-split-pane>
-    <ion-menu>
+    <ion-menu contentId="content">
       <ion-header>
         <ion-toolbar>
           <ion-title>
@@ -38,7 +38,7 @@
           </ion-item>
           
           <ion-list *ngIf="floor.open">
-            <ion-menu-toggle>
+            <ion-menu-toggle auto-hide="false">
               <ion-item class="roomInSiteMap" *ngFor="let room of floor.rooms" [routerLink]="floor.floor + '|' + room.name + '|' + room.id" routerDirection="root" routerLinkActive="active">
                 <ion-icon name="star" slot="start"></ion-icon>
                 <ion-label>
@@ -53,6 +53,6 @@
 
       </ion-content>
     </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
+    <ion-router-outlet id="content" main></ion-router-outlet>
   </ion-split-pane>
 </ion-app>
