@@ -9,7 +9,7 @@
           </ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
+      <ion-content class="paneColor">
         <!-- <ion-list>
           <ion-menu-toggle *ngFor="let p of menuItem">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
@@ -31,16 +31,17 @@
           </ion-menu-toggle> -->
 
           <ion-item button *ngIf="floor.rooms.length > 0" (click)="floor.open = !floor.open"
-            [class.active-parent]="floor.open" detail="false">
-            <ion-icon name="arrow-forward" slot="start" *ngIf="!floor.open"></ion-icon>
-            <ion-icon name="arrow-down" slot="start" *ngIf="floor.open"></ion-icon>
+            [class.active-parent]="floor.open" detail="false"
+            class="sideMenuTiles">
+            <ion-icon name="arrow-forward" slot="start" *ngIf="!floor.open" color="success"></ion-icon>
+            <ion-icon name="arrow-down" slot="start" *ngIf="floor.open" color="success"></ion-icon>
             <ion-label>{{floor.floor}}</ion-label>
           </ion-item>
           
-          <ion-list *ngIf="floor.open">
+          <ion-list *ngIf="floor.open" class="roomList">
             <ion-menu-toggle auto-hide="false">
-              <ion-item class="roomInSiteMap" *ngFor="let room of floor.rooms" [routerLink]="floor.floor + '|' + room.name + '|' + room.id" routerDirection="root" routerLinkActive="active">
-                <ion-icon name="star" slot="start"></ion-icon>
+              <ion-item class="roomInSiteMap sideMenuTiles" *ngFor="let room of floor.rooms" [routerLink]="floor.floor + '|' + room.name + '|' + room.id" routerDirection="root" routerLinkActive="active">
+                <ion-icon name="star" slot="start"  color="success"></ion-icon>
                 <ion-label>
                   {{ room.name }}
                 </ion-label>
@@ -50,7 +51,6 @@
 
 
         </div>
-
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="content" main></ion-router-outlet>
