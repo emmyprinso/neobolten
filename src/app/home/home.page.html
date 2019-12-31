@@ -7,14 +7,22 @@
     <ion-title>
       {{ currentLocation.floor + " | " + currentLocation.room + " |" }}
       Ionic Blank
-      <app-sitemap></app-sitemap>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <!-- The world is your oyster.
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p> -->
+    <app-sitemap></app-sitemap>
   </div>
 </ion-content>
+
+<ion-footer>
+      <ion-button expand="full">
+        <ion-icon slot="icon-only" name="finger-print"></ion-icon> Scenes
+      </ion-button>
+
+ 
+</ion-footer>

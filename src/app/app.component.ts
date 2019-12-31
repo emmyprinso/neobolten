@@ -17,13 +17,6 @@ export class AppComponent {
   //   {title: "Test3", url: "/test3", icon: "trash"}
   // ];
 
-  public currentLocation = {
-    floor: "first Floor",
-    floorid: "1",
-    room: "Living Room",
-    roomid: "1"
-  }
-
   
   public globalSiteMap = [
     {
